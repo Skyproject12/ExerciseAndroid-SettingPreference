@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SettingPreference</string>
+    <string name="key_name">keyname</string>
+    <string name="key_email">keyemail</string>
+    <string name="key_age">keyage</string>
+    <string name="key_phone">keyphone</string>
+    <string name="key_love">keylove</string>
+</resources>
