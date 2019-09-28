@@ -28,12 +28,15 @@ public class PreferenceFragment extends PreferenceFragmentCompat implements Shar
         setSummari();
     }
     private void init(){
+        // melakukan inisialisasi untuk preference berdasarkan key
         NAMA= getResources().getString(R.string.key_name);
         EMAIL= getResources().getString(R.string.key_email);
         AGE= getResources().getString(R.string.key_age);
         PHONE= getResources().getString(R.string.key_phone);
         LOVE= getResources().getString(R.string.key_love);
 
+
+        // mendefinisikan key preference
         namaPreference=(EditTextPreference)findPreference(NAMA);
         emailPreference=(EditTextPreference)findPreference(EMAIL);
         agePreference=(EditTextPreference)findPreference(AGE);
@@ -50,8 +53,11 @@ public class PreferenceFragment extends PreferenceFragmentCompat implements Shar
     @Override
     public void onPause() {
         super.onPause();
+        // melakukan pengecekan apakah terdapat perubahan dari aplikasi jika ada maka akan menjalankan method onSharedPreferenceChanged
         getPreferenceScreen().getSharedPreferences().unregisterOnSharedPreferenceChangeListener(this);
     }
+
+    // mengubah value dari inputtext menjadi yang kita inputkan sesuai dengan key dari setiap inputtext
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
@@ -71,6 +77,8 @@ public class PreferenceFragment extends PreferenceFragmentCompat implements Shar
             lovePreference.setChecked(sharedPreferences.getBoolean(LOVE, false));
         }
     }
+
+    // melakukan settext pada inputtext pertama kali
     private void setSummari(){
         SharedPreferences sh= getPreferenceManager().getSharedPreferences();
         namaPreference.setSummary(sh.getString(NAMA, DEFAULT_VALUE));

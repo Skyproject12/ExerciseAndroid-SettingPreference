@@ -44,3 +44,5 @@
         android:key="keylove"/>
 
 </PreferenceScreen>
+<!--digunakan ketika ingin mengatur preference-->
+<!--app:iconSpaceRevert digunakan untuk menghapus space dari edittext-->

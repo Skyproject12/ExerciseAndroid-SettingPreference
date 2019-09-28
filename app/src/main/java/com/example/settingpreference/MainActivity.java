@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        // memanggil lalu menambahkan fragment preference yang telah dibuat kedalam main activity
         getSupportFragmentManager().beginTransaction().add(R.id.setting_holder, new PreferenceFragment()).commit();
     }
 }
